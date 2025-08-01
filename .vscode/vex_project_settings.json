@@ -1,0 +1,18 @@
+{
+	"project": {
+		"name": "2900A-Conveyer",
+		"slot": 7,
+		"description": "Empty V5 C++ Project",
+		"platform": "V5",
+		"creationDate": "Sun, 20 Jul 2025 08:27:41 GMT",
+		"language": "cpp",
+		"sdkVersion": "V5_20240802_15_00_00",
+		"cpp": {
+			"includePath": []
+		}
+	},
+	"extension": {
+		"version": "0.7.2025041600",
+		"json": 1
+	}
+}
