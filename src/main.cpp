@@ -42,6 +42,8 @@ void pre_auton(void) {
   // Example: clearing encoders, setting servo positions, ...
   scraper.set(true); // Set scraper to false at the start
   goalExtended = true; // Initialize goalExtended to false 
+  aligner.set(false); // Set aligner to false at the start
+  alignerExtended = false; // Initialize alignerExtended to false
 }
 
 /*---------------------------------------------------------------------------*/

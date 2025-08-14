@@ -23,6 +23,7 @@ motor storage = motor(PORT13, false);
 motor Intake = motor(PORT12, ratio18_1, false);
 motor top = motor(PORT11, false);
 digital_out scraper = digital_out(Brain.ThreeWirePort.G);
+digital_out aligner = digital_out(Brain.ThreeWirePort.F);
 line Color = line(Brain.ThreeWirePort.D);
 // VEXcode generated functions
 // define variable for remote controller enable/disable
@@ -33,6 +34,7 @@ bool Controller1RightShoulderControlMotorsStopped = true;
 bool DrivetrainLNeedsToBeStopped_Controller1 = true;
 bool DrivetrainRNeedsToBeStopped_Controller1 = true;
 bool goalExtended = true;
+bool alignerExtended = false;
 // define a task that will handle monitoring inputs from Controller1
 int rc_auto_loop_function_Controller1() {
   // process the controller input every 20 milliseconds
@@ -112,7 +114,14 @@ int rc_auto_loop_function_Controller1() {
             // If the button is pressed, extend the scraper
             scraper.set(true);
             goalExtended = true;
-        }
+      }
+      if (Controller1.ButtonA.PRESSED){
+        aligner.set(true);
+        alignerExtended = true;
+      } else if (Controller1.ButtonB.PRESSED) {
+        aligner.set(false);
+        alignerExtended = false;
+      }
     }
     // wait before repeating the process
     wait(20, msec);
